@@ -44,26 +44,78 @@ b = y_mean - m*x_mean
 
 ---
 
-# 📊 Multiple Linear Regression (Python)
+# 📊 Multiple Linear Regression (Without Libraries)
 
-A simple Python program to perform **Multiple Linear Regression** with **two independent variables**, calculated manually using the **Least Squares Method** — no external libraries required.
+This project demonstrates **Multiple Linear Regression implemented manually in Python**, without using any external libraries like NumPy or scikit-learn.  
+It helps understand the mathematical logic behind regression and how the coefficients are derived step by step.
 
 ---
 
-## 💡 Description
-This project finds the regression coefficients (**B₀**, **B₁**, **B₂**) for the equation:
+## 🧮 Formula Used
+
+The regression model is:
 
 \[
 Y = B_0 + B_1X_1 + B_2X_2
 \]
 
-and predicts the value of **Y** for given **X₁** and **X₂**.
+Where the coefficients are calculated using the following formulas:
+
+\[
+B_1 = \frac{ΣX_2^2ΣX_1Y - ΣX_1X_2ΣX_2Y}{ΣX_1^2ΣX_2^2 - (ΣX_1X_2)^2}
+\]
+
+\[
+B_2 = \frac{ΣX_1^2ΣX_2Y - ΣX_1X_2ΣX_1Y}{ΣX_1^2ΣX_2^2 - (ΣX_1X_2)^2}
+\]
+
+\[
+B_0 = \bar{Y} - B_1\bar{X_1} - B_2\bar{X_2}
+\]
 
 ---
 
-## 🧮 Example Data
-```python
-X1 = [3, 4, 5, 6, 2]
-X2 = [8, 5, 7, 3, 1]
-Y  = [-3.7, 3.5, 2.5, 11.5, 5.7]
+## 🧠 Concept Summary
+
+- **Goal:** Predict the value of `Y` based on two independent variables, `X1` and `X2`.  
+- **Method:** Uses the least squares approach to minimize the error between predicted and actual values.  
+- **Output:** Regression coefficients `B0`, `B1`, `B2`, and the final regression equation.
+
+---
+
+## 🧾 Example
+
+**Input:**
+Enter the no of terms : 4
+Enter X11: 2
+Enter X21: 3
+Enter Y1: 4
+Enter X12: 4
+Enter X22: 2
+Enter Y2: 5
+Enter X13: 3
+Enter X23: 4
+Enter Y3: 6
+Enter X14: 5
+Enter X24: 3
+Enter Y4: 7
+Enter the x1 : 3
+Enter the x2 : 2
+
+makefile
+Copy code
+
+**Output:**
+Gradient B1 : 0.8
+Gradient B2 : 0.2
+Bias B0 : 2.0
+Final Regression Equation : y = 2.0 + 0.8x1 + 0.2x2
+Predicted Value of y at 3.0 and 2.0 is : 4.8000
+---
+
+## 📘 Key Takeaways
+
+- Understand how multiple regression coefficients are calculated manually.  
+- Learn the relationship between dependent and independent variables.  
+- Practice applying statistical formulas programmatically.  
 
