@@ -25,7 +25,7 @@ def _Gradient(X,Y,n,B0,B1,A):
             dB1 += error*X[i]
             dB0 +=error
     
-        # Average gradient
+        # Average
         dB1 /= n
         dB0 /= n
         
@@ -49,4 +49,5 @@ def _main():
     A = float(input("Enter the Learning Rate A(alpha) : "))
     
     _Gradient(X,Y,n,B0,B1,A)
+
 _main()
