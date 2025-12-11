@@ -113,4 +113,19 @@ This version has **no intercept** (`B0 = 0`).
 
 ---
 
+# Batch Gradient Descent for Linear Regression
+
+Simple from-scratch implementation of **batch gradient descent** to fit a linear model \( y = B_0 + B_1 \cdot x \) using mean squared error.
+
+## Features
+-  Computes predictions, loss, and gradients manually  
+-  Averages gradients by `n` (standard MSE convention)
+-  Prints B0 (intercept), B1 (slope), and loss each iteration
+-  Interactive input for data, initial parameters, learning rate
+
+## Mathematical Background
+
+**Cost function**: \( J(B_0, B_1) = \frac{1}{2n} \sum_{i=1}^{n} (y_{\text{pred},i} - y_i)^2 \)
+
+**Gradient updates**:
 
