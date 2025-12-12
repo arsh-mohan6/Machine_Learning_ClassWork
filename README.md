@@ -115,19 +115,56 @@ This version has **no intercept** (`B0 = 0`).
 
 # Batch Gradient Descent for Linear Regression
 
-Simple from-scratch implementation of **batch gradient descent** to fit a linear model \( y = B_0 + B_1 \cdot x \) using mean squared error.
+###  Overview
+This Python project demonstrates **Linear Regression** using **Batch Gradient Descent (BGD)** — a foundational optimization algorithm in machine learning.
 
-## Features
--  Computes predictions, loss, and gradients manually  
--  Averages gradients by `n` (standard MSE convention)
--  Prints B0 (intercept), B1 (slope), and loss each iteration
--  Interactive input for data, initial parameters, learning rate
+Unlike **Stochastic Gradient Descent (SGD)**, which updates model parameters after every single data point, **Batch Gradient Descent** updates them **once per iteration** after processing the *entire dataset*.  
+This approach leads to smoother and more stable convergence, though it may be slower on large datasets.
 
-## Mathematical Background
+---
 
-**Cost function**: \( J(B_0, B_1) = \frac{1}{2n} \sum_{i=1}^{n} (y_{\text{pred},i} - y_i)^2 \)
+\[
+Y_{pred} = B0 + B1 \times X
+\]
 
-**Gradient updates**:
+Where:
+- `B0` → Intercept (bias term)  
+- `B1` → Slope (weight)  
+- `X` → Input feature  
+- `Y` → Actual target values  
+
+---
+
+###  Loss Function
+
+The program minimizes the **Mean Squared Error (MSE)**:
+
+\[
+Loss = \frac{1}{2n} \sum_{i=1}^{n} (Y_{pred_i} - Y_i)^2
+\]
+
+The parameters are updated after computing the **average gradients** across the entire dataset:
+
+\[
+B0 := B0 - A \times \frac{1}{n} \sum_{i=1}^{n}(Y_{pred_i} - Y_i)
+\]
+\[
+B1 := B1 - A \times \frac{1}{n} \sum_{i=1}^{n}(Y_{pred_i} - Y_i) \times X_i
+\]
+
+Where:
+- `A` → Learning Rate (controls how fast the model learns)
+
+---
+
+##  Features
+
+ Implements **Batch Gradient Descent** step-by-step  
+ Shows **parameter updates** and **loss per iteration**  
+ Interactive user input for data and hyperparameters  
+ Educational for understanding linear regression learning  
+
+---
 
 #  Stochastic Gradient Descent for Linear Regression
 
@@ -173,7 +210,7 @@ Where:
 
 ---
 
-## 🧩 Features
+##  Features
 
  Implements **Stochastic Gradient Descent** step-by-step  
  Shows **parameter updates (B0, B1)** and **loss** after each iteration  
