@@ -2,7 +2,7 @@
 def Stochastic_gradient_descent(B0, B1, A, X, Y, n):
 
 
-    print(f"\nInitial Values → B0: {B0}, B1: {B1}")
+    print(f"\nInitial Values - B0: {B0}, B1: {B1}")
     print("-" * 60)
 
     iterations = int(input("Enter the number of Iterations (Epochs): "))
@@ -31,7 +31,7 @@ def Stochastic_gradient_descent(B0, B1, A, X, Y, n):
             print(f"Update {i + 1}: B0 = {B0:.4f}, B1 = {B1:.4f}, Loss = {loss:.6f}")
             
     print("\n Training Complete")
-    print(f"Final Values → B0: {B0:.4f}, B1: {B1:.4f}")
+    print(f"Final Values - B0: {B0:.4f}, B1: {B1:.4f}")
     print("-" * 60)
 
 
